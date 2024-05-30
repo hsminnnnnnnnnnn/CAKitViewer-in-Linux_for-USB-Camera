@@ -1,1 +1,1 @@
-# CAKitViewer-in-Linux-for-USB_Camera-
+# CAKitViewer in Linux_for USBCamera
