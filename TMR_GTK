@@ -1,0 +1,90 @@
+> # Intro
+-. 우분투 환경에서 CAKitViewer를 만들기 위해 사용할 수 있는 프로그램을 조사함
+-. 많은 프로그램 중 GTK와 QT를 많이 사용하는 것으로 보임
+-. 두가지 프로그램 중 GTK에 대한 내용을 정리함
+-. GTK 사이트 : https://www.gtk.org/docs/getting-started/
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/b39583c8-8912-4d8e-aa31-22d6550e7cd3)
+
+
+> # GTK란?
+리눅스에서 GUI를 다루기 위한 가장 대표적인 라이브러리 중 하나임
+-. 지원 언어 : C, C++, Python 등
+-. 지원 OS : Linux, Windows, MacOS
+-. 오픈소스임
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/0f8373c3-f78f-46bc-9218-13d3f682c42a)
+
+
+> # GTK 설치 방법
+-. 아래 커맨드를 이용하여 gtk3 및 필요 패키지 설치 진행
+`~$ sudo apt-get install libgtk-3-dev`
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/b39583c8-8912-4d8e-aa31-22d6550e7cd3)
+
+> # GTK Dev Tools
+-. gtk를 이용 시 관련 개발 툴을 이용할 수 있음
+-. 3가지(Eclipse, Gnome Builder, Mono Develop)가 있으며, 3가지 다 IDE임
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/b39583c8-8912-4d8e-aa31-22d6550e7cd3)
+  ## 1. Eclipse
+  -. 라이브러리 지정, 코드 컴파일 가능
+  -. 코드 상에서 UI 수정 해야 함
+  ![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/352454b8-c49f-4606-b97c-e00198b8a4d7)
+  ![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/6c5c64ec-ba0d-4e98-83b4-6a59eaff4ebe)
+
+  ## 2. Mono Develop
+  -. 코드 컴파일 가능
+  -. 프로그램에서 UI 수정 가능
+  -. 아래 이미지와 관련된 영상 URL : https://www.youtube.com/watch?v=vw0YMcD67vU
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/d4c31dd9-6b76-48fd-a4ef-b196eb8d7523)
+
+  ## 3. Gnome Builder
+  -. 코드 컴파일 가능
+  -. UI 수정 위해서 Glade Interface Designer라는 프로그램 사용 필요
+  -. glade interface designer : GTK용 GUI 빌더
+  -. Gnome Builder로 프로젝트 생성 후 빌드 -> 생성된 .ui 파일을 Glade로 open하여 ui 수정
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/6669e382-71a9-4f99-85c4-6281b2276ba1)
+
+## Glade 
+  -. GTK용 GUI빌더
+  -. UI만 편집 가능한 프로그램, 많은 사람들이 Glade를 사용하는 것으로 보임
+  -. Glade 이용하여 Dialog 생성 -> 저장 -> .c파일과 .glade파일 등 몇가지 파일이 생성됨
+
+.c파일에서 카메라 영상 출력 위한 코드 추가하면 될 듯
+-> gnome builder , eclipse, monodevelop 필요 없음? 
++)  vscode 사용 가능
+아래 내용 URL : https://teonotebook.wordpress.com/2019/03/17/cross-platform-gui-application-development-with-vscode-c-gtk3-gtksharp-and-glade/
+
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/085c3203-77a5-44c5-a46a-86a624466ee1)
+#### * 사용 튜토리얼
+아카이브 사이트?? URL : https://web.archive.org/web/20210628084247/https://prognotes.net/gtk-glade-c-programming/
+유튜브 URL : https://www.youtube.com/watch?v=g-KDOH_uqPk&list=PLmMgHNtOIstZEvqYJncYUx52n8_OV0uWy&index=2
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/b39583c8-8912-4d8e-aa31-22d6550e7cd3)
+
+> # GTK with C++
+GTK 공식 사이트의 FAQ에서 찾음
+-> GTK에서 C++ 을 사용하는 방법에 대해 나와있음 (2가지)
+gtkmm을 사용하여 C++ 바인딩을 진행하거나 ~~
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/4cba01d6-b1be-471d-bc85-40609ce90671)
+
+### # 언어 바인딩
+-. GTK에서 C++을 사용하기 위해 gtkmm이라는 라이브러리 설치가 필요함
+-. gtkmm 설치 전 필요한 패키지 (gtkmm 설치 전 설치 필요)
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/5b4eb47a-986f-4bd4-8c3c-9bdd628b15f4)
+
+-. 아래 커맨드를 통해 gtkmm 및 필요 패키지 설치
+`~$ sudo apt-get install libgtkmm-3.0-dev`
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/b39583c8-8912-4d8e-aa31-22d6550e7cd3)
+
+> # gtkmm(C++)에 대해 기술된 내용 
+-. 아래 내용은 gtk 홈페이지에서 링크된 사이트임.
+-. gtkmm에 대한 설명, GUI 프로그래밍을 위해 기능 별 설명이 나와있음
+-. 해당 내용 참고하여 진행 예정
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/91217cd4-6339-4523-8300-b244cdc87735)
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/2e23f0fe-296e-44e6-af5b-2c5c2dd0f345)
+
+> # gtk(C)에 대해 기술된 내용 
+-. GTK 공식 사이트 : https://docs.gtk.org/gtk4/
+-.  GTK4 기준으로 작성되어있음
+-. 참고하여 GTK3에 맞게 이용하면 될 것 같음
+
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/4f955264-63f8-4ed1-90e3-bea3d7489cb1)
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/2e00f8cf-42b3-4c21-a95b-9e401975901c)
+![Image](https://github.com/users/ROIIVELAB/projects/4/assets/165998118/c9eed028-0e53-44fc-aad0-5b5982d5bbaa)
